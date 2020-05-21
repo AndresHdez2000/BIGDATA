@@ -1,0 +1,18 @@
+use NameDatabase
+
+Collections are added automatically if it does not exist
+db.CollectionName
+
+For insert one
+db.CollectionName.insertOne("VALID JSON")
+
+for update
+db.CollectionName.update({register that we want to update},
+			{"$set":{json that we want}})
+
+for remove one
+db.CollectionName.remove("Valid JSON we want to delate")
+
+for a 2 level file.
+db.CollectionName.insertOne({ValidJson of two levels})
+
