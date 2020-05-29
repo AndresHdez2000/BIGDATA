@@ -6,3 +6,9 @@
 
 Replication
 curl -H "Content-Type: application/json" http://127.0.0.1:5984/_replicate -d "{\"source\":\"andystoys\", \"target\":\"http://localhost:5984/andystoys_consol\", \"continuous\":true}"
+
+
+Fuentes:
+https://dev.to/codehakase/the-couchdb-replicator-database---a-short-overview-3j86
+https://mkyong.com/web/curl-post-json-data-on-windows/
+https://guide.couchdb.org/draft/replication.html
