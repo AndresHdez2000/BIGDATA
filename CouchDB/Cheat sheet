@@ -8,10 +8,48 @@ curl http://127.0.0.1:5984/
 
 
 ###Lets get started:
-
+This will create a new database, you don't need to input file names to create it
 curl -X PUT http://127.0.0.1:5984/test_1
 
+Now, it is important to say that if the database already exists, as long as you are specfy to PUT, you will recive an error 
 
+Now if you want the details of the database, you migh use the "-v" in order to get the specific information about the database
+curl -vX PUT http://127.0.0.1:5984/test_1
+{
+* About to connect() to 127.0.0.1 port 5984 (#0)
+*   Trying 127.0.0.1... connected
+* Connected to 127.0.0.1 (127.0.0.1) port 5984 (#0)
+> PUT /albums-backup HTTP/1.1
+> User-Agent: curl/7.16.3 (powerpc-apple-darwin9.0) libcurl/7.16.3 OpenSSL/0.9.7l zlib/1.2.3
+> Host: 127.0.0.1:5984
+> Accept: */*
+>
+< HTTP/1.1 201 Created
+< Server: CouchDB (Erlang/OTP)
+< Date: Sun, 05 Jul 2009 22:48:28 GMT
+< Content-Type: text/plain;charset=utf-8
+< Content-Length: 12
+< Cache-Control: must-revalidate
+<
+{"ok":true}
+* Connection #0 to host 127.0.0.1 left intact
+* Closing connection #0
+}
+
+
+
+CREATING FILES:
+
+To get access to the datasets, you might want to use this line, because it is going to  return you a json 
+with the information you need to access and input a document
+
+curl -X GET http://127.0.0.1:5984/_uuids
+RETRUNS:
+{"uuids":["1c9dbefd210a1ddee105e02bc000d7e6"]}
+
+Now we can start to put inputs in the dataset:
+
+curl -X PUT http://127.0.0.1:5984/test_1/1c9dbefd210a1ddee105e02bc000d7e6 -d "{\"enterprise\":\"apple\",\"phone\":\"iphone\"}"
 
 
 
