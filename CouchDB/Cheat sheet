@@ -1,4 +1,15 @@
 
+# Couch DB 
+
+
+### Check if your server is running corrctly:
+
+curl http://127.0.0.1:5984/
+
+
+###Lets get started:
+
+curl -X PUT http://127.0.0.1:5984/test_1
 
 
 
